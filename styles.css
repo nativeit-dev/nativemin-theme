@@ -157,7 +157,7 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     position: fixed;
     padding: 0px !important;
     opacity: 1.0 !important;
-    filter: blur(1px);
+    filter: blur(0) contrast(100%) saturate (100%) hue-rotate(0);
     z-index: 3;
     bottom: 10%;
     top: 90%;
