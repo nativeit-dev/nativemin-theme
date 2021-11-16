@@ -163,7 +163,7 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     top: 90%;
     left: 0;
     max-height: 15%;
-    padding: 0 !important;
+    padding: 10px !important;
     table-layout: fixed;
     text-align: center;
     pointer-events: none;
