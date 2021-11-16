@@ -1,9 +1,11 @@
 @import url(//fonts.googleapis.com/css2?family=Barlow&family=Lato&family=Oswald&family=Roboto&family=Inconsolata&family=Source+Code+Pro);
 :root {
     --ui_font_normal: Barlow, Lato, Roboto, Helvetica, Arial, sans-serif !important;
-    --ui_font_header: Oswald, Lato, Roboto, Helvetica, Arial, sans-serif !important;
+    --ui_font_header: 'Oswald', Lato, Roboto, Helvetica, Arial, sans-serif !important;
     --ui_font_button: Barlow, Lato, Roboto, Helvetica, Arial, sans-serif !important;
     --ui_font_mono: Inconsolata, 'Source Code Pro', 'Courier New', monospaced !important;
+    --bg_color_dark-trans: rgba(23, 29, 31, .5) !important;
+    --ui_color_black: rgba(23, 29, 31, 1) !important;
     --ui_color_red: rgba(220, 100, 100, 1) !important;
     --ui_color_green: rgba(135, 250, 185, 1) !important;
     --ui_color_blue: rgba(98, 209, 249, 1) !important;
@@ -14,16 +16,56 @@
     --ui_color_white: rgba(245, 248, 250, 1) !important;
 }
 
-body:not(.session_login) {
-    font-family: var(--ui_font_normal);
+
+/*****		BODY		*****/
+
+html[data-bgs='gainsboro'],
+html[data-bgs='gainsboro'] body,
+html[data-bgs='gainsboro'] .container:not(.form-signin-banner) .container:not(.session_login),
+html[data-bgs='gainsboro'] .loader-container,
+html[data-bgs='gainsboro'] {
+    background-repeat: repeat;
+    background-image: radial-gradient(#e0e0e0, #333333), url('https://host.nativeit.net/img/bg/ink/5.jpg');
+    filter: opacity(0.95);
+    background-position: left;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
 }
 
-.panel-title>a,
-.panel-title>small,
-.panel-title>.small,
-.panel-title>small>a,
-.panel-title>.small>a {
-    color: var(--ui_color_white);
+.body:after {
+    content: "";
+    background-image: radial-gradient(#e0e0e0, #333333), url('https://host.nativeit.net/img/bg/patterns/white_sand.png');
+    height: 300%;
+    width: 300%;
+    opacity: .3;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+html[data-bgs='gainsboro'],
+html[data-bgs='gainsboro'] body,
+html[data-bgs='gainsboro'] .container:not(.form-signin-banner),
+html[data-bgs='gainsboro'] .loader-container,
+html[data-bgs='gainsboro'] .input-group-addon {
+    background-color: #d6d6d6 !important;
+}
+
+html[data-bgs='gainsboro'],
+html[data-bgs='gainsboro'] .container:not(.form-signin-banner),
+html[data-bgs='gainsboro'] .loader-container,
+html[data-bgs='gainsboro'] {
+    background-color: transparent !important;
+}
+
+.modal-backdrop.in {
+    display: none !important;
+}
+
+
+/*		TEXT & LINKS	*/
+
+body:not(.session_login) {
+    font-family: var(--ui_font_normal);
 }
 
 a {
@@ -32,7 +74,7 @@ a {
 
 a:hover,
 a:active {
-    color: var(--ui_color_red);
+    color: var(--ui_color_orange);
 }
 
 select,
@@ -93,41 +135,56 @@ form.session_login,
     filter: opacity(0.8);
 }
 
-.session_login .form-signin-banner,
-.session_login .form-signin {
-    background-color: rgba(21, 39, 43, 0.6) !important;
-    border: 1px solid #da6360d7 !important;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 3px;
+
+/*****		BRANDING		*****/
+
+.__logo {
+    position: fixed;
+    padding: 0px !important;
+    opacity: 1.0 !important;
+    filter: blur(1px);
+    z-index: 3;
+    bottom: 10%;
+    top: 90%;
+    left: 0;
+    max-height: 15%;
+    padding: 0 !important;
+    table-layout: fixed;
+    text-align: center;
+    pointer-events: none;
 }
 
-.form-group {
-    margin-bottom: 10px !important;
-}
-
-.session_login .form-signin-heading {
-    font-size: 33px;
-    font-weight: 400;
+.session_login .awobject {
     display: none;
 }
 
-i.wbm-webmin::before {
-    content: '\271a' !important;
+
+/*****		SIDEBAR		*****/
+
+aside {
+    z-index: 2;
+    backface-visibility: hidden;
 }
 
-.session_login [class^='wbm-']:before,
-.session_login [class*=' wbm-']:before {
-    display: none !important;
-    font-size: 37px;
-    font-weight: normal !important;
-    font-style: normal !important;
-    font-variant: normal !important;
-    line-height: 1;
-    text-transform: none !important;
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+html #sidebar {
+    background-color: var(--bg_color_dark-trans);
+    backdrop-filter: blur(3px) contrast(100%);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+sidebar ul.sub>li:not(.menu-container) a {
+    font-size: unset !important;
+}
+
+html #sidebar .switch-mins a {
+    font-family: var(--ui_font_header);
+    background-color: var(--bg_color_dark-trans);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+i.wbm-webmin::before {
+    content: '\271A' !important;
 }
 
 .wbm-virtualmin:before {
@@ -153,7 +210,7 @@ i.wbm-webmin::before {
 }
 
 .switch-mins label:first-of-type::after {
-    font-family: 'Oswald', Roboto, Helvetica, Arial, sans-serif !important;
+    font-family: var(--ui_font_header);
     font-weight: 700;
     letter-spacing: 4px;
     content: 'NATIVE';
@@ -165,6 +222,84 @@ i.wbm-webmin::before {
 
 .wbm-virtualmin {
     color: #999999;
+}
+
+#sidebar ul.user-links li:not(.menu-container):not(.sub-wrapper):not(.flex-br) {
+    line-height: 0;
+    min-width: 26px;
+    min-height: 25px;
+    height: 25px;
+    max-height: 25px;
+    margin-top: 2px;
+    margin-right: 5px;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    text-align: center;
+    vertical-align: unset;
+    border: 0 solid rgba(255, 255, 255, .06);
+    border-radius: 3px !important;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container .user-html {
+    overflow: visible;
+    z-index: 4;
+}
+
+#server-id {
+    position: relative;
+    overflow: visible;
+    font-family: var(--ui_font_header);
+    font-weight: 600;
+    font-size: 5em;
+    text-align: center;
+    color: var(--ui_color_black);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+
+/*****		LOGIN PAGE		*****/
+
+.session_login .form-signin-banner,
+.session_login .form-signin {
+    background-color: var(--bg_color_dark-trans);
+    border: 2px solid #da6360d7 !important;
+    backdrop-filter: blur(8px) saturate(0.5) contrast(120%);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 3px;
+}
+
+.form-group {
+    margin-bottom: 10px !important;
+}
+
+.session_login .form-signin-heading {
+    font-size: 33px;
+    font-weight: 400;
+    display: none;
+}
+
+.session_login [class^='wbm-']:before,
+.session_login [class*=' wbm-']:before {
+    display: none !important;
+    font-size: 37px;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    line-height: 1;
+    text-transform: none !important;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body>div>form>div.__logo_welcome._logo_welcome>img {
@@ -203,16 +338,28 @@ form.session_login,
     font-size: 18px;
     font-weight: 400;
     font-smoothing: antialiased;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     content: 'imagination + technology';
+    text-transform: uppercase;
     color: #d7d7d7d7 !important;
     display: block;
     visibility: visible;
 }
 
+
+/*****		BUTTONS		*****/
+
 button {
     font-family: var(--ui_font_button);
     border-radius: 3px;
+}
+
+.btn:not(.btn-round),
+button.btn:not(.btn-round),
+.csf-container input[type='submit']:not(.btn-round),
+.csf-container button.input:not(.btn-round),
+input[type='submit']:not(.btn-round) {
+    border-radius: 3px !important;
 }
 
 .btn:not(.btn-xxs):not(.btn-tiny):not(.ui_link_replaced):not(.ui_link_empty),
@@ -230,6 +377,7 @@ button.btn {
     text-align: center !important;
     -webkit-box-shadow: none;
     box-shadow: none;
+    border-radius: 3px;
 }
 
 .btn-primary {
@@ -337,65 +485,29 @@ input[name]:not([type='image']):not([type='checkbox']):not([type='radio']):not(.
     border-left-color: #666666 !important;
 }
 
-html #sidebar {
-    background-color: rgba(19, 23, 31, 0.3) !important;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-}
 
-sidebar ul.sub>li:not(.menu-container) a {
-    font-size: unset !important;
-}
+/***** COLORED BUTTONS & ALERTS *****/
 
-html #sidebar .switch-mins a {
-    /*
-    background-color: rgba(42, 120, 242, 0.3) !important;
-*/
-    font-family: var(--ui_font_heading);
-    background-color: rgba(38, 46, 62, 0.3) !important;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-}
-
-
-/*
-html[data-theme="darkGrey"] #sidebar {
-	background-color: rgba(19, 23, 31, 0.3) !important;
-    backdrop-filter: blur(3px);
-   -webkit-backdrop-filter: blur(3px);
-}
-sidebar ul.sub>li:not(.menu-container) a {
-    font-size: unset !important;
-}
-html[data-theme="darkGrey"] #sidebar .switch-mins a {
-/*
-    background-color: rgba(42, 120, 242, 0.3) !important;
-*/
-
-font-family: var(--ui_font_header);
-background-color: rgba(38, 46, 62, 0.3) !important;
-backdrop-filter: blur(3px);
--webkit-backdrop-filter: blur(3px);
-
-}
-*/
-/***** COLORED BUTTONS & ELEMENTS *****/
 #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
     border-left: 4px solid;
     border-color: var(--ui_color_red);
 }
+
 #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
     border-left: 4px solid;
     border-color: var(--ui_color_red);
 }
+
 .badge-danger {
     color: #fff !important;
     border-color: var(--ui_color_red);
     background-color: var(--ui_color_red);
 }
+
 .text-danger {
     color: var(--ui_color_red);
 }
+
 .alert .alert-warning {
     background-color: rgba(200, 200, 200, 0.01);
     !important;
@@ -403,29 +515,43 @@ backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     color: var(--ui_color_red);
 }
+
 .alert-warning {
     border-bottom-color: rgba(215, 215, 215, 0.5) !important;
     color: var(--ui_color_red) !important;
 }
+
 .__logout-link .fa-sign-out.text-danger {
+    color: var(--ui_color_blue);
+}
+
+.__logout-link:hover a>.text-danger {
     color: var(--ui_color_red);
 }
+
 .right-side-tabs-toggler[data-bgs='nav']>button {
     color: var(--ui_color_blue);
 }
+
 .cke_dialog_ui_button_ok,
 .btn-success {
-    color: var(--ui_color_white border-color: #2c8828 !important;
+    color: var(--ui_color_white);
+    border-color: #2c8828 !important;
     background-color: var(--ui_color_green);
 }
-.switch-mins: border-bottom: 1px solid !important;
-border-bottom-color: rgba(215, 215, 215, 0.5) !important;
+
+.switch-mins : border-bottom: 1px solid !important;
+border-bottom-color: rgba(215,
+215,
+215,
+0.5) !important;
 
 }
 #system-status .alert {
     background-color: rgba(255, 255, 255, 0.3) !important;
 }
-button.favorites-editor, #headln2c>button.favorites {
+button.favorites-editor,
+#headln2c>button.favorites {
     display: none;
 }
 .btn.btn-transparent-link {
@@ -435,31 +561,12 @@ button.favorites-editor, #headln2c>button.favorites {
     border-color: #e8e9e9;
     border-radius: 3px !important;
 }
-.btn:not(.btn-round), button.btn:not(.btn-round), .csf-container input[type='submit']:not(.btn-round), .csf-container button.input:not(.btn-round), input[type='submit']:not(.btn-round) {
+.btn:not(.btn-round),
+button.btn:not(.btn-round),
+.csf-container input[type='submit']:not(.btn-round),
+.csf-container button.input:not(.btn-round),
+input[type='submit']:not(.btn-round) {
     border-radius: 3px !important;
-}
-#sidebar ul.user-links li:not(.menu-container):not(.sub-wrapper):not(.flex-br) {
-    line-height: 0;
-    min-width: 26px;
-    min-height: 25px;
-    height: 25px;
-    max-height: 25px;
-    margin-top: 2px;
-    margin-right: 5px;
-    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    text-align: center;
-    vertical-align: unset;
-    border: 0 solid rgba(255, 255, 255, .06);
-    border-radius: 3px !important;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
 }
 #headln2c {
     vertical-align: middle;
@@ -513,8 +620,9 @@ button.favorites-editor, #headln2c>button.favorites {
     margin-top: 0px;
     margin-bottom: 1px;
 }
-.well, .modal-content {
-    border-radius:3px !important;
+.well,
+.modal-content {
+    border-radius: 3px !important;
 }
 #system-status .panel-title {
     margin-top: 4px;
@@ -546,48 +654,4 @@ button.favorites-editor, #headln2c>button.favorites {
     text-transform: uppercase;
     pointer-events: none;
     color: var(--ui_color_dark);
-}
-
-/***** BRANDING *****/
-.__logo {
-    padding: 0px !important;
-    opacity: .8 !important;
-}
-.__logo {
-    position: fixed;
-    z-index: 10003;
-    bottom: 10%;
-    top: 90% left: 0;
-    max-height: 15%;
-    padding: 0 !important;
-    table-layout: fixed;
-    text-align: center;
-    pointer-events: none;
-}
-.session_login .awobject {
-    display: none;
-}
-html[data-bgs='gainsboro'], html[data-bgs='gainsboro'] body, html[data-bgs='gainsboro'] .container:not(.form-signin-banner) .container:not(.session_login), html[data-bgs='gainsboro'] .loader-container, html[data-bgs='gainsboro'] {
-    background-repeat: repeat;
-    background-image: radial-gradient(#e0e0e0, #333333), url('https://host.nativeit.net/img/bg/ink/5.jpg');
-    filter: opacity(0.95);
-    background-position: left;
-    background-blend-mode: multiply;
-    background-attachment: fixed;
-}
-html[data-bgs='gainsboro'],
-html[data-bgs='gainsboro'] body,
-html[data-bgs='gainsboro'] .container:not(.form-signin-banner),
-html[data-bgs='gainsboro'] .loader-container,
-html[data-bgs='gainsboro'] .input-group-addon {
-    background-color: #d6d6d6 !important;
-}
-html[data-bgs='gainsboro'],
-html[data-bgs='gainsboro'] .container:not(.form-signin-banner),
-html[data-bgs='gainsboro'] .loader-container,
-html[data-bgs='gainsboro'] {
-    background-color: transparent !important;
-}
-.modal-backdrop.in {
-    display: none !important;
 }
