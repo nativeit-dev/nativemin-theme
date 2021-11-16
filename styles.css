@@ -155,7 +155,7 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
 
 .__logo {
     position: fixed;
-    padding: 0px !important;
+    padding: 10px !important;
     opacity: 1.0 !important;
     filter: blur(0) contrast(100%) saturate (100%) hue-rotate(0);
     z-index: 3;
@@ -163,7 +163,6 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     top: 90%;
     left: 0;
     max-height: 15%;
-    padding: 10px !important;
     table-layout: fixed;
     text-align: center;
     pointer-events: none;
