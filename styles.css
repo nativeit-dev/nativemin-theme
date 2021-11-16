@@ -1,9 +1,9 @@
-@import url(//fonts.googleapis.com/css2?family=Barlow&family=Lato&family=Oswald&family=Roboto&family=Inconsolata&family=Source+Code+Pro);
+@import url(//fonts.googleapis.com/css2?family=Barlow&family=Oswald&family=Inconsolata);
 :root {
-    --ui_font_normal: Barlow, Lato, Roboto, Helvetica, Arial, sans-serif !important;
-    --ui_font_header: 'Oswald', Lato, Roboto, Helvetica, Arial, sans-serif !important;
-    --ui_font_button: Barlow, Lato, Roboto, Helvetica, Arial, sans-serif !important;
-    --ui_font_mono: Inconsolata, 'Source Code Pro', 'Courier New', monospaced !important;
+    --ui_font_normal: Barlow, Helvetica, Arial, sans-serif !important;
+    --ui_font_header: 'Oswald', Helvetica, Arial, sans-serif !important;
+    --ui_font_button: Barlow, Helvetica, Arial, sans-serif !important;
+    --ui_font_mono: Inconsolata, 'Courier New', monospaced !important;
     --bg_color_dark-trans: rgba(23, 29, 31, .5) !important;
     --ui_color_black: rgba(23, 29, 31, 1) !important;
     --ui_color_red: rgba(220, 100, 100, 1) !important;
@@ -25,29 +25,11 @@ html[data-bgs='gainsboro'] .container:not(.form-signin-banner) .container:not(.s
 html[data-bgs='gainsboro'] .loader-container,
 html[data-bgs='gainsboro'] {
     background-repeat: repeat;
-    background-image: radial-gradient(#e0e0e0, #333333), url('https://host.nativeit.net/img/bg/ink/5.jpg');
+    background-image: radial-gradient(#e0e0e0, #333333), url('https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/img/background.jpg');
     filter: opacity(0.95);
     background-position: left;
     background-blend-mode: multiply;
     background-attachment: fixed;
-}
-
-.body:after {
-    content: "";
-    background-image: radial-gradient(#e0e0e0, #333333), url('https://host.nativeit.net/img/bg/patterns/white_sand.png');
-    height: 300%;
-    width: 300%;
-    opacity: .3;
-    background-attachment: fixed;
-    z-index: -1;
-}
-
-html[data-bgs='gainsboro'],
-html[data-bgs='gainsboro'] body,
-html[data-bgs='gainsboro'] .container:not(.form-signin-banner),
-html[data-bgs='gainsboro'] .loader-container,
-html[data-bgs='gainsboro'] .input-group-addon {
-    background-color: #d6d6d6 !important;
 }
 
 html[data-bgs='gainsboro'],
@@ -56,7 +38,6 @@ html[data-bgs='gainsboro'] .loader-container,
 html[data-bgs='gainsboro'] {
     background-color: transparent !important;
 }
-
 .modal-backdrop.in {
     display: none !important;
 }
@@ -74,7 +55,7 @@ a {
 
 a:hover,
 a:active {
-    color: var(--ui_color_orange);
+    color: var(--ui_color_red);
 }
 
 select,
@@ -130,36 +111,25 @@ form.session_login,
     font-family: var(--ui_font_normal);
     font-size: 100%;
 }
-
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss i,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .panel .panel-heading .panel-title a:before,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] div.media-body>small,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group>a.list-group-item div.media-body>i,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] a.list-group-item .list-group-item-heading,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] button.list-group-item .list-group-item-heading,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data strong,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo a,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo .panel-title-status,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data span[data-data]+strong {
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss i, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .panel .panel-heading .panel-title a:before, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] div.media-body>small, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group>a.list-group-item div.media-body>i, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] a.list-group-item .list-group-item-heading, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] button.list-group-item .list-group-item-heading, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data strong, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo a, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo .panel-title-status, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data span[data-data]+strong {
     color: var(--ui_color_white);
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, .07);
+    text-shadow: 1px 1px 0 rgba(0,0,0,.07);
 }
-
 .tab-content {
-    background-color: var(--ui_color_dark);
+	background-color: var(--ui_color_dark);
 }
 
 .form-group {
     filter: opacity(0.8);
 }
-
 .ct-axis-title {
-    font-family: var(--ui_font_mono) !important;
+	font-family: var(--ui_font_mono) !important;
     font-size: 13px;
     opacity: .6;
 }
-
+html[data-theme="blue"] .form-group .form-control.sidebar-search {
+    color: var(--ui_color_grey);
+}
 
 /*****		BRANDING		*****/
 
@@ -207,7 +177,6 @@ html #sidebar .switch-mins a {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
 }
-
 .switch-mins label {
     font-size: 15px;
     font-weight: normal;
@@ -215,7 +184,6 @@ html #sidebar .switch-mins a {
     opacity: .3;
     color: var(--ui_color_grey) !important;
 }
-
 i.wbm-webmin::before {
     content: '\271A' !important;
 }
@@ -223,12 +191,10 @@ i.wbm-webmin::before {
 .wbm-virtualmin:before {
     content: '\f08c';
 }
-
 .switch-mins {
     border-bottom: 1px solid !important;
     border-color: var(--ui_color_red) !important;
 }
-
 .switch-mins label i.wbm-webmin {
     margin-top: 2px;
     margin-bottom: 2px;
@@ -243,13 +209,15 @@ i.wbm-webmin::before {
     font-family: var(--ui_font_normal);
     color: var(--ui_color_grey);
 }
-
+#sidebar li:not(.menu-container):not(.sub-wrapper).active a {
+    background-color: var(--ui_color_dark);
+}
 .switch-mins input:checked+label {
     color: var(--ui_color_grey);
 }
 
 .switch-mins label:first-of-type::after {
-    color: var(--ui_color_grey);
+	color: var(--ui_color_grey);
     font-family: var(--ui_font_header);
     font-weight: 700;
     letter-spacing: 4px;
@@ -287,14 +255,11 @@ i.wbm-webmin::before {
     justify-content: center;
     align-items: center;
 }
-
-#sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>span,
-#sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>a {
+#sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>span, #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>a {
     font-size: 11px;
     padding: 0 !important;
     color: var(--ui_color_grey);
 }
-
 .menu-container .user-html {
     overflow: visible;
     z-index: 4;
@@ -319,7 +284,8 @@ i.wbm-webmin::before {
 .session_login .form-signin-banner,
 .session_login .form-signin {
     background-color: var(--bg_color_dark-trans);
-    border: 1px solid #da6360d7 !important;
+    border: 1px solid;
+    border-color: var(--ui_color_red) !important;
     backdrop-filter: blur(8px) saturate(0.5) contrast(120%);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 3px;
@@ -388,7 +354,7 @@ form.session_login,
     letter-spacing: 2px;
     content: 'imagination + technology';
     text-transform: uppercase;
-    color: #d7d7d7d7 !important;
+    color: var(--ui_color_grey) !important;
     display: block;
     visibility: visible;
 }
@@ -408,7 +374,7 @@ button.btn:not(.btn-round),
 .csf-container button.input:not(.btn-round),
 input[type='submit']:not(.btn-round) {
     border-radius: 3px !important;
-    margin-left: 3px;
+	margin-left: 3px;
 }
 
 .btn:not(.btn-xxs):not(.btn-tiny):not(.ui_link_replaced):not(.ui_link_empty),
@@ -438,7 +404,6 @@ button.btn {
     border-radius: 3px;
     margin-left: 3px;
 }
-
 .btn-default {
     font-family: var(--ui_font_button);
     color: var(--ui_color_dark) !important;
@@ -447,7 +412,6 @@ button.btn {
     border-radius: 3px;
     margin-left: 3px;
 }
-
 .btn-warning {
     font-family: var(--ui_font_button);
     color: var(--ui_color_white) !important;
@@ -455,32 +419,25 @@ button.btn {
     background-color: var(--ui_color_black) !important;
     border-radius: 3px;
 }
-
 .btn-danger {
     color: var(--ui_color_white) !important;
     border-color: var(--ui_color_red) !important;
     background-color: var(--ui_color_red) !important;
 }
-
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active {
+.btn-danger:hover,.btn-danger:focus,.btn-danger:active {
     color: var(--ui_color_white) !important;
     border-color: var(--ui_color_red) !important;
-    background-image: radial-gradient(#dc6464, #a94442);
+	background-image: radial-gradient(#dc6464, #a94442);
 }
-
 .btn-warning:not(.btn-menu-toggler):hover,
 .btn-warning:not(.btn-menu-toggler):focus,
 .btn-warning:not(.btn-menu-toggler):active,
 .btn-warning.active,
 .open .dropdown-toggle.btn-warning {
     font-family: var(--ui_font_button);
-    color: var(--ui_color_black) !important;
-    ;
-    border-color: var(--ui_color_grey) !important;
-    ;
-    background-image: radial-gradient(#d7d7d7, #fafafa);
+    color: var(--ui_color_black) !important;;
+    border-color: var(--ui_color_grey) !important;;
+	background-image: radial-gradient(#d7d7d7, #fafafa);
     border: 1px solid #333333 !important;
     border-radius: 3px;
 }
@@ -493,7 +450,7 @@ button.btn {
     font-family: var(--ui_font_button);
     color: var(--ui_color_black) !important;
     border-color: var(--ui_color_black) !important;
-    background-image: radial-gradient(#d7e1dc, #f5f8fa);
+	background-image: radial-gradient(#d7e1dc, #f5f8fa);
     border: 1px solid #333333 !important;
     border-radius: 3px;
     margin-right: 3px;
@@ -503,15 +460,10 @@ button.btn {
     margin-bottom: 3px !important;
     border-radius: 3px;
 }
-
-.btn-default:focus,
-.btn-default.active,
-.btn-default:active,
-.btn-default:not([aria-expanded="true"]):hover {
+.btn-default:focus, .btn-default.active, .btn-default:active, .btn-default:not([aria-expanded="true"]):hover {
     border-color: var(--ui_color_black) !important;
-    background-image: radial-gradient(#d7e1dc, #f5f8fa);
+	background-image: radial-gradient(#d7e1dc, #f5f8fa);
 }
-
 .btn.btn-success:not(.btn-xxs):not(.ui_link):not(.ui_submit),
 .btn.btn-success.btn-tiny:not(.btn-xxs):not(.ui_link):not(.ui_submit) {
     font-family: var(--ui_font_button);
@@ -523,12 +475,10 @@ button.btn {
     border-radius: 3px;
     margin-left: 3px;
 }
-
 html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form_end_buttons td:last-child .btn:first-child {
     margin-right: 3px !important;
     margin-left: 5px !important;
 }
-
 .btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
@@ -547,7 +497,7 @@ fieldset[disabled] .btn-primary.active {
     font-family: var(--ui_font_button);
     color: var(--ui_color_black) !important;
     border-color: var(--ui_color_black) !important;
-    background-image: radial-gradient(#d7e1dc, #f5f8fa);
+	background-image: radial-gradient(#d7e1dc, #f5f8fa);
     border: 1px solid #666666 !important;
     border-radius: 3px;
 }
@@ -575,14 +525,12 @@ input[name]:not([type='image']):not([type='checkbox']):not([type='radio']):not(.
     border-radius: 3px;
     text-shadow: none;
 }
-
-body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-child .btn-group .btn:first-child,
-html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form_end_buttons .btn {
+body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-child .btn-group .btn:first-child, html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form_end_buttons .btn {
     margin-left: 3px;
 }
 
 .cspinner-icon.white {
-    border-color: var(--ui_color_grey) !important;
+	border-color: var(--ui_color_grey) !important;
 }
 
 
@@ -607,15 +555,12 @@ html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form
 .text-danger {
     color: var(--ui_color_red);
 }
-
 .text-success {
     color: var(--ui_color_green);
 }
-
 .text-info {
     color: var(--ui_color_blue);
 }
-
 .alert .alert-warning {
     background-color: rgba(200, 200, 200, 0.01);
     backdrop-filter: blur(3px);
@@ -645,13 +590,9 @@ html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form
     border-color: var(--ui_color_green) !important;
     background-color: var(--ui_color_white) !important;
 }
-
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] [color="green"],
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text-success,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text_type_success {
-    var(--ui_color_green) !important;
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] [color="green"], html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text-success, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text_type_success {
+   	var(--ui_color_green) !important;
 }
-
 .cke_dialog_ui_button_ok,
 .btn-success {
     color: var(--ui_color_green) !important;
@@ -697,15 +638,7 @@ button.btn:not(.btn-round),
 input[type='submit']:not(.btn-round) {
     border-radius: 3px !important;
 }
-
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'],
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group-item,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs,
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs .active a,
-html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav']>button,
-html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'].opened>button,
-html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group-item, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs .active a, html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav']>button, html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'].opened>button, html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
     background-color: var(--ui_color_dark) !important;
     color: var(--ui_color_white) !important;
 }
@@ -749,18 +682,15 @@ html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
     background-color: var(--ui_color_black);
     border-color: var(--ui_color_black);
 }
-
 .panel-default>.panel-heading-collapse {
     vertical-align: middle;
     color: var(--ui_color_white);
     background-color: var(--ui_color_black);
     border-color: var(--ui_color_black);
 }
-
 .container-fluid .panel-heading:hover h4>a {
-    color: var(--ui_color_blue) !important;
+	color: var(--ui_color_blue) !important;
 }
-
 .panel-title {
     vertical-align: middle;
     text-align: right;
@@ -768,7 +698,6 @@ html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
     margin-top: 0px;
     margin-bottom: 1px;
 }
-
 #headln2c {
     vertical-align: middle;
     font-size: 14px;
@@ -782,18 +711,15 @@ html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
     font-size: 23px;
     display: inline-block;
 }
-
 .well,
 .modal-content {
     border-radius: 3px !important;
 }
-
 .piechart canvas {
     display: inline-block;
     vertical-align: baseline;
     filter: saturate(120%) contrast(120%) hue-rotate(90);
 }
-
 #system-status .panel-title {
     margin-top: 1px;
     font-size: 18px;
