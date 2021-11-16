@@ -170,7 +170,19 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
 .session_login .awobject {
     display: none;		/* This removes the Webmin icon from the login screen */
 }
-
+aside .menu-container.menu-status span {
+    /* margin: -10px 12px 9px 10px; */
+    margin-top: 10px;
+    background-color: transparent;
+    text-align: left;
+    font-size: 11px;
+    border-radius: 0;
+    padding: 3px 9px;
+    line-height: 10px;
+    color: rgba(199,210,230,.91);
+    /* border: 1px solid rgba(255,255,255,.12); */
+    border-top-width: 0;
+}
 
 /*
  *	SIDEBAR
