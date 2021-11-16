@@ -715,7 +715,7 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     border-color: var(--ui_color_black);
 }
 .container-fluid .panel-heading:hover h4>a {
-	color: var(--ui_color_blue) !important;
+	color: var(--ui_color_red) !important;
 }
 .panel-title {
     vertical-align: middle;
