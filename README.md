@@ -3,7 +3,7 @@
 
 ## Custom CSS For Webmin/Virtualmin
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Screenshot of main Webmin dashboard](https://github.com/nativeit-dev/webmin-native-theme/blob/master/screenshots/dashboard.png?raw=true)
 
 **This repository contains the custom CSS that I created for use with the Webmin Authentic Theme via its *Theme Extensions* interface.**
 
