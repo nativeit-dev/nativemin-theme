@@ -1,7 +1,7 @@
 # Custom CSS For Virtualmin's Authentic Theme
 ---
 
-![Screenshot of main Webmin dashboard](https://github.com/nativeit-dev/webmin-native-theme/blob/master/screenshots/dashboard.png?raw=true)
+![Screenshot of main Webmin dashboard](https://github.com/nativeit-dev/nativemin-theme/blob/master/screenshots/dashboard.png?raw=true)
 
 This repository contains the custom CSS that I created for use with the Webmin Authentic Theme via its *Theme Extensions* interface.
 
@@ -17,7 +17,7 @@ This repository contains the custom CSS that I created for use with the Webmin A
   2. Set the **navigation bar color pallette** to the default **"Blue"** (from `Theme Configuration > Navigation menu`).
   3. Obtain a suitable background image and upload it somewhere that will allow you to link to it from the CSS.
   4. Go to `Theme Configuration > Theme Logos` and upload the logos you would like to appear on the login screen (unauthenticated logo) and at the bottom of the navigation bar (authenticated logo). A roughly square-ish PNG with a transparent background is the best option for this.
-  5. **Copy the raw contents** of `styles.css` ([click here](https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/styles.css) for the raw version).
+  5. **Copy the raw contents** of `styles.css` ([click here](https://raw.githubusercontent.com/nativeit-dev/nativemin-theme/master/styles.css) for the raw version).
   6. Paste the entirety of it into the **Theme Extensions** panel under `Theme Configuration > Theme Extensions`.
   7. Under the first block of CSS Body declarations after the Variables, locate the following line: `background-image: radial-gradient(#e0e0e0, #333333), url('https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/img/background.jpg');` (this is line 44 in the current version, it's been clearly commented) and **replace the URL with the background image you uploaded in Step 3**.
   8. Save your changes.
@@ -41,11 +41,11 @@ In over two decades of website development and design that has morphed over the 
 **My sincere thanks to everyone who has contributed to Webmin/Virtualmin.**
 ---
 
-![Screenshot of Webmin login screen](https://github.com/nativeit-dev/webmin-native-theme/blob/master/screenshots/login-ui.png?raw=true)
+![Screenshot of Webmin login screen](https://github.com/nativeit-dev/nativemin-theme/blob/master/screenshots/login-ui.png?raw=true)
 
-![Screenshot of main Webmin navigation](https://github.com/nativeit-dev/webmin-native-theme/blob/master/screenshots/sidebar.png?raw=true)
+![Screenshot of main Webmin navigation](https://github.com/nativeit-dev/nativemin-theme/blob/master/screenshots/sidebar.png?raw=true)
 
-![Screenshot of main Webmin theme extensions editor](https://github.com/nativeit-dev/webmin-native-theme/blob/master/screenshots/theme-extensions.png?raw=true)
+![Screenshot of main Webmin theme extensions editor](https://github.com/nativeit-dev/nativemin-theme/blob/master/screenshots/theme-extensions.png?raw=true)
 ---
 
 ### Known issues & TODO
