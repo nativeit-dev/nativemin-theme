@@ -1,10 +1,10 @@
 /*
- * 'Native Theme' for Webmin/Virtualmin (https://github.com/nativeit-dev/webmin-native-theme)
+ * 'Native Theme' for Webmin/Virtualmin (https://github.com/nativeit-dev/nativemin-theme)
  * Created by Stephen Davis - sdavis@nativeit.net
  * Based on a single custom CSS file that extends Virtualmin's Bootstrap-derived 'Authentic Theme' (https://github.com/virtualmin/authentic-theme)
  * Virtualmin's 'Authentic Theme' is licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *
- * This project is ongoing, please see the README at https://github.com/nativeit-dev/webmin-native-theme for more information, TODO, or to report issues and/or submit corrections and improvements.
+ * This project is ongoing, please see the README at https://github.com/nativeit-dev/nativemin-theme for more information, TODO, or to report issues and/or submit corrections and improvements.
  */
 
 
@@ -41,7 +41,7 @@ html[data-bgs='gainsboro'] .container:not(.form-signin-banner) .container:not(.s
 html[data-bgs='gainsboro'] .loader-container,
 html[data-bgs='gainsboro'] {
     background-repeat: repeat;
-    background-image: radial-gradient(#e0e0e0, #333333), url('https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/img/background.jpg');	/* REPLACE THIS URL WITH YOUR BACKGROUND IMAGE */
+    background-image: radial-gradient(#e0e0e0, #333333), url('https://raw.githubusercontent.com/nativeit-dev/nativemin-theme/master/img/background.jpg');	/* REPLACE THIS URL WITH YOUR BACKGROUND IMAGE */
     filter: opacity(0.95);
     background-position: left;
     background-blend-mode: multiply;
