@@ -1,3 +1,17 @@
+/*
+ * 'Native Theme' for Webmin/Virtualmin (https://github.com/nativeit-dev/webmin-native-theme)
+ * Created by Stephen Davis - sdavis@nativeit.net
+ * Based on a single custom CSS file that extends Virtualmin's Bootstrap-derived 'Authentic Theme' (https://github.com/virtualmin/authentic-theme)
+ * Virtualmin's 'Authentic Theme' is licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *
+ * This project is ongoing, please see the README at https://github.com/nativeit-dev/webmin-native-theme for more information, TODO, or to report issues and/or submit corrections and improvements.
+ */
+
+
+/*
+ * 	VARIABLES
+ */
+
 @import url(//fonts.googleapis.com/css2?family=Barlow&family=Oswald&family=Inconsolata);
 :root {
     --ui_font_normal: Barlow, Helvetica, Arial, sans-serif !important;
@@ -17,7 +31,9 @@
 }
 
 
-/*****		BODY		*****/
+/*
+ * 	BODY
+ */
 
 html[data-bgs='gainsboro'],
 html[data-bgs='gainsboro'] body,
@@ -43,7 +59,9 @@ html[data-bgs='gainsboro'] {
 }
 
 
-/*		TEXT & LINKS	*/
+/*
+ * 	TEXT & LINKS
+ */
 
 body:not(.session_login) {
     font-family: var(--ui_font_normal);
@@ -131,7 +149,9 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     color: var(--ui_color_grey);
 }
 
-/*****		BRANDING		*****/
+/*
+ * 	CUSTOM BRANDING
+ */
 
 .__logo {
     position: fixed;
@@ -148,13 +168,14 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     text-align: center;
     pointer-events: none;
 }
-
 .session_login .awobject {
-    display: none;
+    display: none;		/* This removes the Webmin icon from the login screen */
 }
 
 
-/*****		SIDEBAR		*****/
+/*
+ *	SIDEBAR
+ */
 
 aside {
     z-index: 2;
@@ -184,12 +205,18 @@ html #sidebar .switch-mins a {
     opacity: .3;
     color: var(--ui_color_grey) !important;
 }
+.switch-mins label:first-of-type i+span {
+    display: none !important;		/* This removes the original Webmin icon from the left sidebar button. */
+}
 i.wbm-webmin::before {
-    content: '\271A' !important;
+    content: '\271A' !important;	/* This defines the glyph that appears on the left sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
 }
 
 .wbm-virtualmin:before {
-    content: '\f08c';
+    content: '\f08c';			/* This defines the glyph that appears on the right sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
+}
+.wbm-virtualmin {
+    color: var(--ui_color_grey);
 }
 .switch-mins {
     border-bottom: 1px solid !important;
@@ -199,10 +226,6 @@ i.wbm-webmin::before {
     margin-top: 2px;
     margin-bottom: 2px;
     color: var(--ui_color_grey);
-}
-
-.switch-mins label:first-of-type i+span {
-    display: none !important;
 }
 
 #sidebar li:not(.menu-container):not(.sub-wrapper) a {
@@ -221,15 +244,11 @@ i.wbm-webmin::before {
     font-family: var(--ui_font_header);
     font-weight: 700;
     letter-spacing: 4px;
-    content: 'NATIVE';
+    content: 'NATIVE';				/* This replaces the label text on the left top sidebar button */
     display: block;
     visibility: visible !important;
     margin-top: -4px;
     -webkit-font-smoothing: antialiased;
-}
-
-.wbm-virtualmin {
-    color: var(--ui_color_grey);
 }
 
 #sidebar ul.user-links li:not(.menu-container):not(.sub-wrapper):not(.flex-br) {
@@ -270,7 +289,7 @@ i.wbm-webmin::before {
     overflow: visible;
     font-family: var(--ui_font_header);
     font-weight: 600;
-    font-size: 5em;
+    font-size: 5em;				/* This styles the custom HTML text that is supplied under the theme's Sidebar options panel */
     text-align: center;
     color: var(--ui_color_black);
     margin-top: 10px;
@@ -279,7 +298,9 @@ i.wbm-webmin::before {
 }
 
 
-/*****		LOGIN PAGE		*****/
+/*
+ *	LOGIN PAGE
+ */
 
 .session_login .form-signin-banner,
 .session_login .form-signin {
@@ -303,7 +324,7 @@ i.wbm-webmin::before {
 
 .session_login [class^='wbm-']:before,
 .session_login [class*=' wbm-']:before {
-    display: none !important;
+    display: none !important;			/* This removes the standard Webmin branding from the login page */
     font-size: 37px;
     font-weight: normal !important;
     font-style: normal !important;
@@ -352,7 +373,7 @@ form.session_login,
     -webkit-font-feature-settings: antialiased;
     font-feature-settings: antialiased;
     letter-spacing: 2px;
-    content: 'imagination + technology';
+    content: 'imagination + technology';		/* This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel */
     text-transform: uppercase;
     color: var(--ui_color_grey) !important;
     display: block;
@@ -360,7 +381,9 @@ form.session_login,
 }
 
 
-/*****		BUTTONS		*****/
+/*
+ *	BUTTONS
+ */
 
 button {
     font-family: var(--ui_font_button);
@@ -533,8 +556,9 @@ body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-chi
 	border-color: var(--ui_color_grey) !important;
 }
 
-
-/***** COLORED BUTTONS & ALERTS *****/
+/*
+ *	COLORED BUTTONS & ALERTS
+ */
 
 #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
     border-left: 4px solid;
@@ -644,7 +668,9 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
 }
 
 
-/***** PANEL STYLES *****/
+/*
+ *	INTERFACE PANELS
+ */
 
 .panel {
     margin-bottom: 20px;
@@ -715,11 +741,6 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
 .modal-content {
     border-radius: 3px !important;
 }
-.piechart canvas {
-    display: inline-block;
-    vertical-align: baseline;
-    filter: saturate(120%) contrast(120%) hue-rotate(90);
-}
 #system-status .panel-title {
     margin-top: 1px;
     font-size: 18px;
@@ -728,8 +749,14 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
 }
 
 
-/*	CHARTS	*/
+/*
+ *	PIE CHARTS
+ */
 
+.piechart canvas {
+    display: inline-block;
+    vertical-align: baseline;
+}
 .piechart .percent {
     font-family: var(--ui_font_mono);
     font-size: 3.5em !important;
@@ -742,7 +769,6 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     color: var(--ui_color_dark);
     opacity: 0.5;
 }
-
 .piechart .label {
     font-family: var(--ui_font_mono);
     font-size: 14px !important;
