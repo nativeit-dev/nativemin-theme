@@ -1,10 +1,10 @@
 /*
- * 'Native Theme' for Webmin/Virtualmin (https://github.com/nativeit-dev/nativemin-theme)
+ * 'Native Theme' for Webmin/Virtualmin (https://github.com/nativeit-dev/webmin-native-theme)
  * Created by Stephen Davis - sdavis@nativeit.net
  * Based on a single custom CSS file that extends Virtualmin's Bootstrap-derived 'Authentic Theme' (https://github.com/virtualmin/authentic-theme)
  * Virtualmin's 'Authentic Theme' is licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  *
- * This project is ongoing, please see the README at https://github.com/nativeit-dev/nativemin-theme for more information, TODO, or to report issues and/or submit corrections and improvements.
+ * This project is ongoing, please see the README at https://github.com/nativeit-dev/webmin-native-theme for more information, TODO, or to report issues and/or submit corrections and improvements.
  */
 
 
@@ -13,7 +13,7 @@
  */
 
 @import url(//fonts.googleapis.com/css2?family=Barlow&family=Oswald&family=Inconsolata);
-:root {
+ :root {
     --ui_font_normal: Barlow, Helvetica, Arial, sans-serif !important;
     --ui_font_header: 'Oswald', Helvetica, Arial, sans-serif !important;
     --ui_font_button: Barlow, Helvetica, Arial, sans-serif !important;
@@ -32,8 +32,8 @@
 
 
 /*
- * 	BODY
- */
+  * 	BODY
+  */
 
 html[data-bgs='gainsboro'],
 html[data-bgs='gainsboro'] body,
@@ -41,7 +41,7 @@ html[data-bgs='gainsboro'] .container:not(.form-signin-banner) .container:not(.s
 html[data-bgs='gainsboro'] .loader-container,
 html[data-bgs='gainsboro'] {
     background-repeat: repeat;
-    background-image: radial-gradient(#e0e0e0, #333333), url('https://raw.githubusercontent.com/nativeit-dev/nativemin-theme/master/img/background.jpg');	/* REPLACE THIS URL WITH YOUR BACKGROUND IMAGE */
+    background-image: radial-gradient(#e0e0e0, #333333), url('https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/img/background.jpg');
     filter: opacity(0.95);
     background-position: left;
     background-blend-mode: multiply;
@@ -54,14 +54,15 @@ html[data-bgs='gainsboro'] .loader-container,
 html[data-bgs='gainsboro'] {
     background-color: transparent !important;
 }
+
 .modal-backdrop.in {
     display: none !important;
 }
 
 
 /*
- * 	TEXT & LINKS
- */
+  * 	TEXT & LINKS
+  */
 
 body:not(.session_login) {
     font-family: var(--ui_font_normal);
@@ -129,29 +130,40 @@ form.session_login,
     font-family: var(--ui_font_normal);
     font-size: 100%;
 }
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss i, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .panel .panel-heading .panel-title a:before, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] div.media-body>small, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group>a.list-group-item div.media-body>i, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] a.list-group-item .list-group-item-heading, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] button.list-group-item .list-group-item-heading, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data strong, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo a, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo .panel-title-status, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data span[data-data]+strong {
+
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss i,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .panel .panel-heading .panel-title a:before,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] div.media-body>small,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group>a.list-group-item div.media-body>i,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] a.list-group-item .list-group-item-heading,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] button.list-group-item .list-group-item-heading,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data strong,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo a,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] #extended_sysinfo .panel-title-status,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .tab-pane .info-container .info-list-data span[data-data]+strong {
     color: var(--ui_color_white);
-    text-shadow: 1px 1px 0 rgba(0,0,0,.07);
-}
-.tab-content {
-	background-color: var(--ui_color_dark);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .07);
 }
 
 .form-group {
     filter: opacity(0.8);
 }
+
 .ct-axis-title {
-	font-family: var(--ui_font_mono) !important;
+    font-family: var(--ui_font_mono) !important;
     font-size: 13px;
     opacity: .6;
 }
+
 html[data-theme="blue"] .form-group .form-control.sidebar-search {
     color: var(--ui_color_grey);
 }
 
+
 /*
- * 	CUSTOM BRANDING
- */
+  * 	CUSTOM BRANDING
+  */
 
 .__logo {
     position: fixed;
@@ -167,9 +179,12 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     text-align: center;
     pointer-events: none;
 }
+
 .session_login .awobject {
-    display: none;		/* This removes the Webmin icon from the login screen */
+    display: none;
+    /* This removes the Webmin icon from the login screen */
 }
+
 aside .menu-container.menu-status span {
     /* margin: -10px 12px 9px 10px; */
     margin-top: 10px;
@@ -179,14 +194,15 @@ aside .menu-container.menu-status span {
     border-radius: 0;
     padding: 3px 9px;
     line-height: 10px;
-    color: rgba(199,210,230,.91);
+    color: rgba(199, 210, 230, .91);
     /* border: 1px solid rgba(255,255,255,.12); */
     border-top-width: 0;
 }
 
+
 /*
- *	SIDEBAR
- */
+  *	SIDEBAR
+  */
 
 aside {
     z-index: 2;
@@ -209,6 +225,7 @@ html #sidebar .switch-mins a {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
 }
+
 .switch-mins label {
     font-size: 15px;
     font-weight: normal;
@@ -216,23 +233,31 @@ html #sidebar .switch-mins a {
     opacity: .3;
     color: var(--ui_color_grey) !important;
 }
+
 .switch-mins label:first-of-type i+span {
-    display: none !important;		/* This removes the original Webmin icon from the left sidebar button. */
+    display: none !important;
+    /* This removes the original Webmin icon from the left sidebar button. */
 }
+
 i.wbm-webmin::before {
-    content: '\271A' !important;	/* This defines the glyph that appears on the left sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
+    content: '\271A' !important;
+    /* This defines the glyph that appears on the left sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
 }
 
 .wbm-virtualmin:before {
-    content: '\f08c';			/* This defines the glyph that appears on the right sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
+    content: '\f08c';
+    /* This defines the glyph that appears on the right sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
 }
+
 .wbm-virtualmin {
     color: var(--ui_color_grey);
 }
+
 .switch-mins {
     border-bottom: 1px solid !important;
     border-color: var(--ui_color_red) !important;
 }
+
 .switch-mins label i.wbm-webmin {
     margin-top: 2px;
     margin-bottom: 2px;
@@ -243,19 +268,22 @@ i.wbm-webmin::before {
     font-family: var(--ui_font_normal);
     color: var(--ui_color_grey);
 }
+
 #sidebar li:not(.menu-container):not(.sub-wrapper).active a {
     background-color: var(--ui_color_dark);
 }
+
 .switch-mins input:checked+label {
     color: var(--ui_color_grey);
 }
 
 .switch-mins label:first-of-type::after {
-	color: var(--ui_color_grey);
+    color: var(--ui_color_grey);
     font-family: var(--ui_font_header);
     font-weight: 700;
     letter-spacing: 4px;
-    content: 'NATIVE';				/* This replaces the label text on the left top sidebar button */
+    content: 'NATIVE';
+    /* This replaces the label text on the left top sidebar button */
     display: block;
     visibility: visible !important;
     margin-top: -4px;
@@ -285,11 +313,14 @@ i.wbm-webmin::before {
     justify-content: center;
     align-items: center;
 }
-#sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>span, #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>a {
+
+#sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>span,
+#sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>a {
     font-size: 11px;
     padding: 0 !important;
     color: var(--ui_color_grey);
 }
+
 .menu-container .user-html {
     overflow: visible;
     z-index: 4;
@@ -300,7 +331,8 @@ i.wbm-webmin::before {
     overflow: visible;
     font-family: var(--ui_font_header);
     font-weight: 600;
-    font-size: 5em;				/* This styles the custom HTML text that is supplied under the theme's Sidebar options panel */
+    font-size: 5em;
+    /* This styles the custom HTML text that is supplied under the theme's Sidebar options panel */
     text-align: center;
     color: var(--ui_color_black);
     margin-top: 10px;
@@ -310,8 +342,8 @@ i.wbm-webmin::before {
 
 
 /*
- *	LOGIN PAGE
- */
+  *	LOGIN PAGE
+  */
 
 .session_login .form-signin-banner,
 .session_login .form-signin {
@@ -335,7 +367,8 @@ i.wbm-webmin::before {
 
 .session_login [class^='wbm-']:before,
 .session_login [class*=' wbm-']:before {
-    display: none !important;			/* This removes the standard Webmin branding from the login page */
+    display: none !important;
+    /* This removes the standard Webmin branding from the login page */
     font-size: 37px;
     font-weight: normal !important;
     font-style: normal !important;
@@ -384,7 +417,8 @@ form.session_login,
     -webkit-font-feature-settings: antialiased;
     font-feature-settings: antialiased;
     letter-spacing: 2px;
-    content: 'imagination + technology';		/* This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel */
+    content: 'imagination + technology';
+    /* This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel */
     text-transform: uppercase;
     color: var(--ui_color_grey) !important;
     display: block;
@@ -393,8 +427,8 @@ form.session_login,
 
 
 /*
- *	BUTTONS
- */
+  *	BUTTONS
+  */
 
 button {
     font-family: var(--ui_font_button);
@@ -408,7 +442,7 @@ button.btn:not(.btn-round),
 .csf-container button.input:not(.btn-round),
 input[type='submit']:not(.btn-round) {
     border-radius: 3px !important;
-	margin-left: 3px;
+    margin-left: 3px;
 }
 
 .btn:not(.btn-xxs):not(.btn-tiny):not(.ui_link_replaced):not(.ui_link_empty),
@@ -438,6 +472,7 @@ button.btn {
     border-radius: 3px;
     margin-left: 3px;
 }
+
 .btn-default {
     font-family: var(--ui_font_button);
     color: var(--ui_color_dark) !important;
@@ -446,6 +481,7 @@ button.btn {
     border-radius: 3px;
     margin-left: 3px;
 }
+
 .btn-warning {
     font-family: var(--ui_font_button);
     color: var(--ui_color_white) !important;
@@ -453,25 +489,32 @@ button.btn {
     background-color: var(--ui_color_black) !important;
     border-radius: 3px;
 }
+
 .btn-danger {
     color: var(--ui_color_white) !important;
     border-color: var(--ui_color_red) !important;
     background-color: var(--ui_color_red) !important;
 }
-.btn-danger:hover,.btn-danger:focus,.btn-danger:active {
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
     color: var(--ui_color_white) !important;
     border-color: var(--ui_color_red) !important;
-	background-image: radial-gradient(#dc6464, #a94442);
+    background-image: radial-gradient(#dc6464, #a94442);
 }
+
 .btn-warning:not(.btn-menu-toggler):hover,
 .btn-warning:not(.btn-menu-toggler):focus,
 .btn-warning:not(.btn-menu-toggler):active,
 .btn-warning.active,
 .open .dropdown-toggle.btn-warning {
     font-family: var(--ui_font_button);
-    color: var(--ui_color_black) !important;;
-    border-color: var(--ui_color_grey) !important;;
-	background-image: radial-gradient(#d7d7d7, #fafafa);
+    color: var(--ui_color_black) !important;
+    ;
+    border-color: var(--ui_color_grey) !important;
+    ;
+    background-image: radial-gradient(#d7d7d7, #fafafa);
     border: 1px solid #333333 !important;
     border-radius: 3px;
 }
@@ -484,7 +527,7 @@ button.btn {
     font-family: var(--ui_font_button);
     color: var(--ui_color_black) !important;
     border-color: var(--ui_color_black) !important;
-	background-image: radial-gradient(#d7e1dc, #f5f8fa);
+    background-image: radial-gradient(#d7e1dc, #f5f8fa);
     border: 1px solid #333333 !important;
     border-radius: 3px;
     margin-right: 3px;
@@ -494,10 +537,15 @@ button.btn {
     margin-bottom: 3px !important;
     border-radius: 3px;
 }
-.btn-default:focus, .btn-default.active, .btn-default:active, .btn-default:not([aria-expanded="true"]):hover {
+
+.btn-default:focus,
+.btn-default.active,
+.btn-default:active,
+.btn-default:not([aria-expanded="true"]):hover {
     border-color: var(--ui_color_black) !important;
-	background-image: radial-gradient(#d7e1dc, #f5f8fa);
+    background-image: radial-gradient(#d7e1dc, #f5f8fa);
 }
+
 .btn.btn-success:not(.btn-xxs):not(.ui_link):not(.ui_submit),
 .btn.btn-success.btn-tiny:not(.btn-xxs):not(.ui_link):not(.ui_submit) {
     font-family: var(--ui_font_button);
@@ -509,10 +557,12 @@ button.btn {
     border-radius: 3px;
     margin-left: 3px;
 }
+
 html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form_end_buttons td:last-child .btn:first-child {
     margin-right: 3px !important;
     margin-left: 5px !important;
 }
+
 .btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
@@ -531,7 +581,7 @@ fieldset[disabled] .btn-primary.active {
     font-family: var(--ui_font_button);
     color: var(--ui_color_black) !important;
     border-color: var(--ui_color_black) !important;
-	background-image: radial-gradient(#d7e1dc, #f5f8fa);
+    background-image: radial-gradient(#d7e1dc, #f5f8fa);
     border: 1px solid #666666 !important;
     border-radius: 3px;
 }
@@ -559,17 +609,20 @@ input[name]:not([type='image']):not([type='checkbox']):not([type='radio']):not(.
     border-radius: 3px;
     text-shadow: none;
 }
-body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-child .btn-group .btn:first-child, html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form_end_buttons .btn {
+
+body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-child .btn-group .btn:first-child,
+html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form_end_buttons .btn {
     margin-left: 3px;
 }
 
 .cspinner-icon.white {
-	border-color: var(--ui_color_grey) !important;
+    border-color: var(--ui_color_grey) !important;
 }
 
+
 /*
- *	COLORED BUTTONS & ALERTS
- */
+  *	COLORED BUTTONS & ALERTS
+  */
 
 #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
     border-left: 4px solid;
@@ -590,12 +643,15 @@ body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-chi
 .text-danger {
     color: var(--ui_color_red);
 }
+
 .text-success {
     color: var(--ui_color_green);
 }
+
 .text-info {
     color: var(--ui_color_blue);
 }
+
 .alert .alert-warning {
     background-color: rgba(200, 200, 200, 0.01);
     backdrop-filter: blur(3px);
@@ -625,9 +681,13 @@ body[data-uri*="/tconfig.cgi"] .container-fluid .ui_form_end_buttons td:last-chi
     border-color: var(--ui_color_green) !important;
     background-color: var(--ui_color_white) !important;
 }
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] [color="green"], html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text-success, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text_type_success {
-   	var(--ui_color_green) !important;
+
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] [color="green"],
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text-success,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .text_type_success {
+    var(--ui_color_green) !important;
 }
+
 .cke_dialog_ui_button_ok,
 .btn-success {
     color: var(--ui_color_green) !important;
@@ -673,15 +733,23 @@ button.btn:not(.btn-round),
 input[type='submit']:not(.btn-round) {
     border-radius: 3px !important;
 }
-html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group-item, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs, html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs .active a, html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav']>button, html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'].opened>button, html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
+
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'],
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .list-group-item,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .right-side-tabs-dismiss,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs,
+html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'] .nav-tabs .active a,
+html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav']>button,
+html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'].opened>button,
+html:not([data-bgs='nightRider']) .right-side-tabs-toggler[data-bgs='nav'] {
     background-color: var(--ui_color_dark) !important;
     color: var(--ui_color_white) !important;
 }
 
 
 /*
- *	INTERFACE PANELS
- */
+  *	INTERFACE PANELS
+  */
 
 .panel {
     margin-bottom: 20px;
@@ -719,15 +787,18 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     background-color: var(--ui_color_black);
     border-color: var(--ui_color_black);
 }
+
 .panel-default>.panel-heading-collapse {
     vertical-align: middle;
     color: var(--ui_color_white);
     background-color: var(--ui_color_black);
     border-color: var(--ui_color_black);
 }
+
 .container-fluid .panel-heading:hover h4>a {
-	color: var(--ui_color_red) !important;
+    color: var(--ui_color_red) !important;
 }
+
 .panel-title {
     vertical-align: middle;
     text-align: right;
@@ -735,6 +806,7 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     margin-top: 0px;
     margin-bottom: 1px;
 }
+
 #headln2c {
     vertical-align: middle;
     font-size: 14px;
@@ -748,10 +820,12 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     font-size: 23px;
     display: inline-block;
 }
+
 .well,
 .modal-content {
     border-radius: 3px !important;
 }
+
 #system-status .panel-title {
     margin-top: 1px;
     font-size: 18px;
@@ -759,15 +833,53 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     text-align: right;
 }
 
+.file-manager .data-content-container>[data-tree-view] ul.fancytree-container {
+    font-size: 13px;
+    padding-top: 2px;
+    border-style: none;
+    background-color: var(--ui_color_white);
+}
+
+.file-manager .container-fluid .dataTables_length {
+    margin-top: 2px !important;
+    margin-bottom: -1px;
+}
+
+.file-manager .data-content-container>[data-tree-view] {
+    margin-top: 33px;
+}
+
+.file-manager table>thead>tr>th {
+    color: var(--ui_color_white);
+    letter-spacing: -0.2px;
+}
+
+#DataTables_Table_0_wrapper {
+    color: var(--ui_color_black);
+    background-color: var(--ui_color_white);
+    margin-top: 3px !important;
+    margin-left: 10px;
+}
+
+div.dataTables_wrapper div.dataTables_paginate,
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: -2px;
+    padding-top: .25em;
+    text-align: right;
+}
+
 
 /*
- *	PIE CHARTS
- */
+  *	PIE CHARTS
+  */
 
 .piechart canvas {
     display: inline-block;
     vertical-align: baseline;
 }
+
 .piechart .percent {
     font-family: var(--ui_font_mono);
     font-size: 3.5em !important;
@@ -780,6 +892,7 @@ html:not([data-bgs='nightRider']) .right-side-tabs[data-bgs='nav'], html:not([da
     color: var(--ui_color_dark);
     opacity: 0.5;
 }
+
 .piechart .label {
     font-family: var(--ui_font_mono);
     font-size: 14px !important;
