@@ -533,6 +533,16 @@ button.btn {
     margin-right: 3px;
 }
 
+.page_footer_submit {
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+    background-color: var(--ui_color_grey) !important;
+    color: var(--ui_color_dark) !important;
+}
+
 .session_login .form-signin .form-group.form-signin-group .btn {
     margin-bottom: 3px !important;
     border-radius: 3px;
@@ -638,6 +648,10 @@ html[data-script-name*='settings-editor_read.cgi'] #content .CodeMirror+.ui_form
     color: var(--ui_color_white);
     border-color: var(--ui_color_red);
     background-color: var(--ui_color_red);
+}
+
+html[data-script-name*='settings-editor_read.cgi'] .badge.label-default {
+    margin-top: -12px;
 }
 
 .text-danger {
