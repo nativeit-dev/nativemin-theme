@@ -13,6 +13,7 @@
  */
 
 @import url(https://fonts.googleapis.com/css2?family=Barlow&family=Oswald&family=Inconsolata);
+
 :root {
     --ui_font_normal: Barlow, Helvetica, Arial, sans-serif !important;
     --ui_font_header: "Oswald", Helvetica, Arial, sans-serif !important;
