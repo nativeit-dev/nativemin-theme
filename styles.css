@@ -32,6 +32,7 @@
     --ui_color_dark: rgba(42, 51, 51, 1) !important;
     --ui_color_grey: rgba(215, 225, 220, 1) !important;
     --ui_color_white: rgba(245, 248, 250, 1) !important;
+    --ui_color_fade: rgba(245, 248, 250, 0.85) !important;
 }
 
 
@@ -86,9 +87,17 @@ a {
     color: var(--ui_color_red);
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
+    color: unset;
+}
+
+.sub_table_container.table-hardcoded tr td[width='25%']>a, a.opener_trigger, a:focus, a:hover, a.text-normal a:focus, a.text-normal:hover {
+    color: unset;
+}
+
+a:hover:not(.panel-default) :not(.panel-heading) :not(.fa) {
     color: var(--ui_color_red);
+    filter: hue-rotate(200deg);
 }
 
 select,
@@ -199,6 +208,15 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     /* This removes the Webmin icon from the login screen */
 }
 
+/*
+  *	SIDEBAR
+  */
+
+aside {
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
 aside .menu-container.menu-status span {
     /* margin: -10px 12px 9px 10px; */
     margin-top: 10px;
@@ -213,17 +231,13 @@ aside .menu-container.menu-status span {
     border-top-width: 0;
 }
 
-
-/*
-  *	SIDEBAR
-  */
-
-aside {
-    z-index: 2;
-    backface-visibility: hidden;
+#sidebar {
+    background-color: var(--bg_color_dark-trans);
+    backdrop-filter: blur(0px) contrast(100%);
+    -webkit-backdrop-filter: blur(0px);
 }
 
-html #sidebar {
+#sidebar:hover {
     background-color: var(--bg_color_dark-trans);
     backdrop-filter: blur(3px) contrast(100%);
     -webkit-backdrop-filter: blur(3px);
@@ -531,8 +545,22 @@ form.session_login,
 
 button {
     font-family: var(--ui_font_button);
-    border-radius: 3px;
+    border-radius: 5px;
     margin-right: 3px !important;
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: var(--ui_color_white) !important;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.btn.btn-transparent-link:hover {
+    color: var(--ui_color_blue) !important;
+}
+
+.help_popup.btn.activated, .help_popup.text-lighter:active, .help_popup.text-lighter:focus, .help_popup.text-lighter:hover {
+    color: var(--ui_color_blue) !important;
 }
 
 .btn:not(.btn-round),
@@ -618,6 +646,21 @@ button.btn {
     background-color: var(--ui_color_black) !important;
 }
 
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+    color: var(--ui_color_red) !important;
+    border-color: var(--ui_color_red) !important;
+    background-color: var(--ui_color_white) !important;
+}
+
+.btn-danger[disabled] {
+    color: var(--ui_color_white) !important;
+    border: 1px solid;
+    border-color: var(--ui_color_red) !important;
+    background-color: var(--ui_color_black) !important;
+}
+
 button.favorites-editor,
 #headln2c>button.favorites {
     display: none;
@@ -635,11 +678,22 @@ input[type="submit"]:not(.btn-round) {
     border-radius: 3px !important;
 }
 
+.btn-info {
+    color: var(--ui_color_white) !important;
+    border-color: var(--ui_color_black) !important;
+    background-color: var(--ui_color_blue) !important;
+}
+
 .btn-success {
     color: var(--ui_color_white) !important;
     border-color: var(--ui_color_black) !important;
     background-color: var(--ui_color_black) !important;
     margin-right: 3px;
+}
+
+.btn.btn-success:not(.btn-primary):not(.btn-xxs):not(.ui_link):not(.ui_submit), .btn.btn-success.btn-tiny:not(.btn-xxs):not(.ui_link):not(.ui_submit) {
+    border: 1px solid;
+    border-color: var(--ui_color_green) !important;
 }
 
 .btn-success:active {
@@ -688,14 +742,6 @@ input[type="submit"]:not(.btn-round) {
     border: 1px solid;
 }
 
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active {
-    color: var(--ui_color_white) !important;
-    border-color: var(--ui_color_red) !important;
-    background-image: radial-gradient(#dc6464, #a94442);
-}
-
 .btn-primary:not(.btn-menu-toggler):hover,
 .btn-primary:not(.btn-menu-toggler):focus,
 .btn-primary:not(.btn-menu-toggler):active,
@@ -707,6 +753,19 @@ input[type="submit"]:not(.btn-round) {
     background-image: radial-gradient(#d7e1dc, #f5f8fa) !important;
     border: 1px solid;
     border-radius: 3px;
+}
+
+.btn.btn-xxs {
+    font-size: 11px;
+    line-height: 11px;
+    height: 15px;
+    margin-top: -3px;
+    margin-right: 3px;
+    padding: 0 8px 1px 8px;
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .page_footer_submit {
@@ -723,6 +782,21 @@ input[type="submit"]:not(.btn-round) {
 }
 
 .session_login .form-signin .form-group.form-signin-group .btn {
+    margin-bottom: 3px !important;
+    border-radius: 3px;
+}
+
+.session_login .form-signin .form-group.form-signin-group .btn:first-of-type {
+	border: solid 1px;
+    border-color: var(--ui_color_green) !important;
+    margin-bottom: 3px !important;
+    border-radius: 3px;
+}
+
+.session_login .form-signin .form-group.form-signin-group .btn+a.btn {
+    margin-top: 2px;
+	border: solid 1px;
+    border-color: var(--ui_color_red) !important;
     margin-bottom: 3px !important;
     border-radius: 3px;
 }
@@ -813,7 +887,6 @@ input[name]:not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
     text-align: center;
     border: 1px solid;
-    border-color: var(--ui_color_grey) !important;
     border-radius: 3px;
     text-shadow: none;
 }
@@ -929,7 +1002,8 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
     margin-bottom: 20px;
     color: var(--ui_color_dark);
     background-color: var(--ui_color_white);
-    border: 1px solid #cfcfcf !important;
+    border: 1px solid !important;
+    border-color: var(--ui_color_dark) !important;;
     border-radius: 5px !important;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
@@ -940,37 +1014,73 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
 .panel-heading {
     vertical-align: middle;
     font-family: var(--ui_font_header);
-    color: var(--ui_color_white);
+    color: var(--ui_color_fade);
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 1px;
     border-bottom-width: 1px !important;
-    border-radius: 3px !important;
+    border-radius: 5px !important;
     border-color: var(--ui_color_black);
 }
 
 .panel-group .panel-heading {
     border-bottom-style: solid !important;
     border-bottom-width: 1px !important;
-    border-bottom-color: rgba(215, 215, 0, 0.5) !important;
+    border-bottom-color: var(--ui_color_black) !important;
 }
 
 .panel-default>.panel-heading {
     vertical-align: middle;
-    color: var(--ui_color_white);
+    color: var(--ui_color_fade);
     background-color: var(--ui_color_black);
     border-color: var(--ui_color_black);
+    border-radius: 0 !important;
+}
+
+.panel .panel-heading .panel-title a:before {
+    margin-left: -13px;
+    margin-top: 1px;
+}
+
+.panel, .panel-heading, .panel-group, .panel-group .panel, .well, .modal-content {
+	border-color: var(--ui_color_black) !important;
+    border-radius: 5px !important;
 }
 
 .panel-default>.panel-heading-collapse {
     vertical-align: middle;
-    color: var(--ui_color_white);
+    color: var(--ui_color_grey) !important;
     background-color: var(--ui_color_black);
     border-color: var(--ui_color_black);
+    border-radius: 3px !important;
+}
+
+#content #system-status ._sync_sysinfo_cnt {
+    margin-right: -20px;
+    margin-top: -8px;
+    margin-left: 0;
+    border-color: transparent !important;
 }
 
 .container-fluid .panel-heading:hover h4>a {
     color: var(--ui_color_red) !important;
+}
+
+#extended_sysinfo-1 .panel>.panel-heading>.panel-title>a>.on-hover {
+	color: var(--ui_color_red) !important;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: 0.75 ;
+}
+
+#extended_sysinfo-1 .panel>.panel-heading>.panel-title>a>.on-hover {
+    margin-right: -9px;
+    margin-left: 9px;
+    display: none;
+}
+
+.sub_table_container.table-hardcoded tr td[width='25%']>a, a.opener_trigger:focus {
+    color: var(--ui_color_grey) !important;
 }
 
 .panel-title {
