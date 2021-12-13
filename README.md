@@ -2,11 +2,9 @@
 ---
 ![Profile Image](https://github.com/nativeit-dev/nativemin-theme/blob/527755a7cf8a03ad6b745b5d0460d3d525700d48/img/profile@0.5x.jpg?raw=true)
 
-## Custom CSS For Virtualmin's Authentic Theme
+## Custom CSS Extension For Virtualmin's Authentic Theme
 
 *For more information on Virtualmin, visit their website at https://www.virtualmin.com.*
-
-![Screenshot of main Webmin dashboard](https://github.com/nativeit-dev/nativemin-theme/blob/master/screenshots/dashboard.png?raw=true)
 
 This repository contains the custom CSS that I created for use with the Webmin Authentic Theme via its *Theme Extensions* interface.
 
@@ -16,6 +14,8 @@ This repository contains the custom CSS that I created for use with the Webmin A
   - The CSS has been sorted, organized, and commented *mostly*. Because this is entirely comprised of hacks and modifications of existing styles in the Authentic theme, it can be a little messy in places. (see below for known issues and TODOs)
   - Even with the caveats involved with heavily modifying existing styles, you should be able to implement this with your own branding, backgrounds, fonts, and colors, in an hour or two (assuming you're reasonably comfortable with CSS).
   - Even with no real experience with CSS, applying this as-pictured to an existing and up-to-date Virtualmin instance only takes a few minutes. 
+
+![Screenshot of main Webmin dashboard](https://github.com/nativeit-dev/nativemin-theme/blob/master/screenshots/dashboard.png?raw=true)
 
 ### Installing
   1. Be sure your Virtualmin is **up-to-date** along with the Authentic theme.
