@@ -1,29 +1,30 @@
 /*
- * 'Native Theme' for Webmin/Virtualmin (https://github.com/nativeit-dev/webmin-native-theme)
- * Created by Stephen Davis - sdavis@nativeit.net
- * Based on a single custom CSS file that extends Virtualmin's Bootstrap-derived 'Authentic Theme' (https://github.com/virtualmin/authentic-theme)
- * Virtualmin's 'Authentic Theme' is licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- *
- * This project is ongoing, please see the README at https://github.com/nativeit-dev/webmin-native-theme for more information, TODO, or to report issues and/or submit corrections and improvements.
- */
-
-
+/*   Nativemin Theme for Webmin/Virtualmin (https://github.com/nativeit-dev/webmin-native-theme)
+/*   Created by Stephen Davis - sdavis@nativeit.net
+/*   Based on a single custom CSS file that extends Virtualmin's Bootstrap-derived 'Authentic Theme' (https://github.com/virtualmin/authentic-theme)
+/*   Virtualmin's 'Authentic Theme' is licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 /*
- * 	VARIABLES
- */
+/*   This project is ongoing, please see the README at https://github.com/nativeit-dev/webmin-native-theme for more information, TODO, or to report issues and/or submit corrections and improvements.   */
 
-@import url(https://fonts.googleapis.com/css2?family=Barlow&family=Oswald&family=Inconsolata);
 
+/*   VARIABLES   */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Oswald&family=Inconsolata");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 :root {
     --ui_font_normal: Barlow, Helvetica, Arial, sans-serif !important;
     --ui_font_header: "Oswald", Helvetica, Arial, sans-serif !important;
+    --ui_font_bold_header: Oswald, sans-serif !important;
+    --ui_font_light_header: Oswald, sans-serif !important;
     --ui_font_button: Barlow, Helvetica, Arial, sans-serif !important;
     --ui_font_mono: Inconsolata, "Courier New", monospaced !important;
     --bg_color_dark-trans: rgba(23, 29, 31, 0.5) !important;
+    --ui_color_red_muted: rgb(126, 62, 70) !important;
+    --ui_color_green_muted: rgb(92, 109, 96) !important;
     --ui_color_black: rgba(23, 29, 31, 1) !important;
     --ui_color_red: rgba(220, 100, 100, 1) !important;
-    --ui_color_green: rgb(38, 167, 87);
-    --ui_color_brightgreen: rgba(10, 215, 100, 1);
+    --ui_color_green: rgb(38, 167, 87) !important;
+    --ui_color_brightgreen: rgba(10, 215, 100, 1) !important;
     --ui_color_blue: rgba(98, 209, 249, 1) !important;
     --ui_color_orange: rgba(247, 148, 67, 1) !important;
     --ui_color_yellow: rgba(225, 220, 35, 1) !important;
@@ -36,9 +37,7 @@
 }
 
 
-/*
- *		PSEUDOELEMENTS
- */
+/*   PSEUDOELEMENTS   */
 
 ::selection {
     background-color: var(--ui_color_grey);
@@ -46,9 +45,7 @@
 }
 
 
-/*
-  * 	BODY
-  */
+/*   BODY   */
 
 html[data-bgs="gainsboro"],
 html[data-bgs="gainsboro"] body,
@@ -75,9 +72,7 @@ html[data-bgs="gainsboro"] {
 }
 
 
-/*
-  * 	TEXT & LINKS
-  */
+/*   TEXT & LINKS    */
 
 body:not(.session_login) {
     font-family: var(--ui_font_normal);
@@ -87,11 +82,17 @@ a {
     color: var(--ui_color_red);
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     color: unset;
 }
 
-.sub_table_container.table-hardcoded tr td[width='25%']>a, a.opener_trigger, a:focus, a:hover, a.text-normal a:focus, a.text-normal:hover {
+.sub_table_container.table-hardcoded tr td[width="25%"]>a,
+a.opener_trigger,
+a:focus,
+a:hover,
+a.text-normal a:focus,
+a.text-normal:hover {
     color: unset;
 }
 
@@ -184,9 +185,7 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
 }
 
 
-/*
-  * 	CUSTOM BRANDING
-  */
+/*   CUSTOM BRANDING   */
 
 .__logo {
     position: fixed;
@@ -205,12 +204,11 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
 
 .session_login .awobject {
     display: none;
-    /* This removes the Webmin icon from the login screen */
+    /*   This removes the Webmin icon from the login screen   */
 }
 
-/*
-  *	SIDEBAR
-  */
+
+/*   SIDEBAR   */
 
 aside {
     z-index: 2;
@@ -218,7 +216,7 @@ aside {
 }
 
 aside .menu-container.menu-status span {
-    /* margin: -10px 12px 9px 10px; */
+    /*   margin: -10px 12px 9px 10px;   */
     margin-top: 10px;
     background-color: transparent;
     text-align: left;
@@ -227,7 +225,7 @@ aside .menu-container.menu-status span {
     padding: 3px 9px;
     line-height: 10px;
     color: rgba(199, 210, 230, 0.91);
-    /* border: 1px solid rgba(255,255,255,.12); */
+    /*   border: 1px solid rgba(255,255,255,.12);   */
     border-top-width: 0;
 }
 
@@ -247,6 +245,37 @@ sidebar ul.sub>li:not(.menu-container) a {
     font-size: unset !important;
 }
 
+#sidebar ul.sub li:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 1px;
+    content: "";
+    background: var(--ui_color_red_muted);
+}
+
+#sidebar ul.sub>li>a:before {
+    color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(0px 0px 3px white);
+}
+
+#sidebar li:not(.menu-title):not(.menu-container):not(.user-html-string) {
+    position: relative;
+    list-style: none;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    text-shadow: 1px 1px 0 rgb(0 0 0 / 7%);
+}
+
+#sidebar li:not(.sub-wrapper):not(.menu-container) a:hover,
+.navigation li:not(.sub-wrapper):not(.menu-container) a:hover,
+.navigation li:not(.sub-wrapper):not(.menu-container) a:focus,
+.csf-container a {
+    color: var(--ui_color_grey);
+}
+
 html #sidebar .switch-mins a {
     font-family: var(--ui_font_header);
     background-color: var(--bg_color_dark-trans);
@@ -259,22 +288,24 @@ html #sidebar .switch-mins a {
     font-weight: normal;
     cursor: pointer;
     opacity: 0.3;
-    color: var(--ui_color_grey) !important;
+    color: var(--ui_color_green_muted);
 }
 
 .switch-mins label:first-of-type i+span {
     display: none !important;
-    /* This removes the original Webmin icon from the left sidebar button. */
+    /*   This removes the original Webmin icon from the left sidebar button.   */
 }
 
 i.wbm-webmin::before {
     content: "\271A" !important;
-    /* This defines the glyph that appears on the left sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
+    color: var(--ui_color_green_muted);
+    /*   This defines the glyph that appears on the left sidebar button. https://css-tricks.com/snippets/html/glyphs/   */
 }
 
 .wbm-virtualmin:before {
+    color: var(--ui_color_red_muted);
     content: "\f08c";
-    /* This defines the glyph that appears on the right sidebar button. https://css-tricks.com/snippets/html/glyphs/ */
+    /*   This defines the glyph that appears on the right sidebar button. https://css-tricks.com/snippets/html/glyphs/   */
 }
 
 .wbm-virtualmin {
@@ -298,20 +329,26 @@ i.wbm-webmin::before {
 }
 
 #sidebar li:not(.menu-container):not(.sub-wrapper).active a {
-    background-color: var(--ui_color_dark);
+    filter: drop-shadow(2px -12px 6px black);
+}
+
+#sidebar li:not(.sub-wrapper):not(.menu-container).has-sub.active {
+    background-color: #0b0c0cc4;
+    border-bottom: solid 1px var(--ui_color_red_muted);
+    filter: drop-shadow(2px -12px 6px black);
 }
 
 .switch-mins input:checked+label {
-    color: var(--ui_color_grey);
+    color: var(--ui_color_green_muted);
 }
 
 .switch-mins label:first-of-type::after {
-    color: var(--ui_color_grey);
+    color: var(--ui_color_red_muted);
     font-family: var(--ui_font_header);
     font-weight: 700;
     letter-spacing: 4px;
     content: "NATIVE";
-    /* This replaces the label text on the left top sidebar button */
+    /*   This replaces the label text on the left top sidebar button   */
     display: block;
     visibility: visible !important;
     margin-top: -4px;
@@ -343,7 +380,7 @@ i.wbm-webmin::before {
 }
 
 
-/*	SIDEBAR USER LINKS	 */
+/*   	SIDEBAR USER LINKS   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>span,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container)>a {
@@ -355,7 +392,7 @@ i.wbm-webmin::before {
 }
 
 
-/* PIN/UNPIN */
+/*   PIN/UNPIN   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container) a:not(.no-hover):hover {
@@ -363,7 +400,7 @@ i.wbm-webmin::before {
 }
 
 
-/* DASHBOARD */
+/*   DASHBOARD   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(2n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(2n) a:not(.no-hover):hover {
@@ -371,7 +408,7 @@ i.wbm-webmin::before {
 }
 
 
-/* DAY/NIGHT */
+/*   DAY/NIGHT   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(3n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(3n) a:not(.no-hover):hover {
@@ -379,7 +416,7 @@ i.wbm-webmin::before {
 }
 
 
-/* CLI */
+/*   CLI   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(4n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(4n) a:not(.no-hover):hover {
@@ -387,7 +424,7 @@ i.wbm-webmin::before {
 }
 
 
-/* FAVS */
+/*   FAVS   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(5n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(5n) a:not(.no-hover):hover {
@@ -395,7 +432,7 @@ i.wbm-webmin::before {
 }
 
 
-/* THEME CONFIGURATION */
+/*   THEME CONFIGURATION   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(6n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(6n) a:not(.no-hover):hover {
@@ -403,7 +440,7 @@ i.wbm-webmin::before {
 }
 
 
-/* USER */
+/*   USER   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(7n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(7n) a:not(.no-hover):hover {
@@ -411,7 +448,7 @@ i.wbm-webmin::before {
 }
 
 
-/* LANG */
+/*   LANG   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(8n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(8n) a:not(.no-hover):hover {
@@ -419,7 +456,7 @@ i.wbm-webmin::before {
 }
 
 
-/* LOGOUT */
+/*   LOGOUT   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(9n) span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):nth-of-type(9n) a:not(.no-hover):hover {
@@ -427,7 +464,7 @@ i.wbm-webmin::before {
 }
 
 
-/* REFRESH */
+/*   REFRESH   */
 
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):last-of-type span:hover,
 #sidebar ul.user-links li:not(.sub-wrapper):not(.menu-container):last-of-type a:not(.no-hover):hover {
@@ -445,7 +482,7 @@ i.wbm-webmin::before {
     font-family: var(--ui_font_header);
     font-weight: 600;
     font-size: 5em;
-    /* This styles the custom HTML text that is supplied under the theme's Sidebar options panel */
+    /*   This styles the custom HTML text that is supplied under the theme's Sidebar options panel   */
     text-align: center;
     color: var(--ui_color_black);
     margin-top: 10px;
@@ -454,9 +491,7 @@ i.wbm-webmin::before {
 }
 
 
-/*
-  *	LOGIN PAGE
-  */
+/*   LOGIN PAGE   */
 
 .session_login .form-signin-banner,
 .session_login .form-signin {
@@ -481,7 +516,7 @@ i.wbm-webmin::before {
 .session_login [class^="wbm-"]:before,
 .session_login [class*=" wbm-"]:before {
     display: none !important;
-    /* This removes the standard Webmin branding from the login page */
+    /*   This removes the standard Webmin branding from the login page   */
     font-size: 37px;
     font-weight: normal !important;
     font-style: normal !important;
@@ -531,7 +566,7 @@ form.session_login,
     font-feature-settings: antialiased;
     letter-spacing: 2px;
     content: "imagination + technology";
-    /* This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel */
+    /*   This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel   */
     text-transform: uppercase;
     color: var(--ui_color_grey) !important;
     display: block;
@@ -539,9 +574,7 @@ form.session_login,
 }
 
 
-/*
-  *	BUTTONS
-  */
+/*   BUTTONS   */
 
 button {
     font-family: var(--ui_font_button);
@@ -549,7 +582,8 @@ button {
     margin-right: 3px !important;
 }
 
-.btn-link:hover, .btn-link:focus {
+.btn-link:hover,
+.btn-link:focus {
     color: var(--ui_color_white) !important;
     text-decoration: underline;
     background-color: transparent;
@@ -559,7 +593,10 @@ button {
     color: var(--ui_color_blue) !important;
 }
 
-.help_popup.btn.activated, .help_popup.text-lighter:active, .help_popup.text-lighter:focus, .help_popup.text-lighter:hover {
+.help_popup.btn.activated,
+.help_popup.text-lighter:active,
+.help_popup.text-lighter:focus,
+.help_popup.text-lighter:hover {
     color: var(--ui_color_blue) !important;
 }
 
@@ -569,7 +606,7 @@ button.btn:not(.btn-round),
 .csf-container button.input:not(.btn-round),
 input[type="submit"]:not(.btn-round) {
     border-radius: 3px !important;
-    /* margin-left: 3px; */
+    /*   margin-left: 3px;   */
 }
 
 .btn:not(.btn-xxs):not(.btn-tiny):not(.ui_link_replaced):not(.ui_link_empty),
@@ -691,7 +728,8 @@ input[type="submit"]:not(.btn-round) {
     margin-right: 3px;
 }
 
-.btn.btn-success:not(.btn-primary):not(.btn-xxs):not(.ui_link):not(.ui_submit), .btn.btn-success.btn-tiny:not(.btn-xxs):not(.ui_link):not(.ui_submit) {
+.btn.btn-success:not(.btn-primary):not(.btn-xxs):not(.ui_link):not(.ui_submit),
+.btn.btn-success.btn-tiny:not(.btn-xxs):not(.ui_link):not(.ui_submit) {
     border: 1px solid;
     border-color: var(--ui_color_green) !important;
 }
@@ -787,7 +825,7 @@ input[type="submit"]:not(.btn-round) {
 }
 
 .session_login .form-signin .form-group.form-signin-group .btn:first-of-type {
-	border: solid 1px;
+    border: solid 1px;
     border-color: var(--ui_color_green) !important;
     margin-bottom: 3px !important;
     border-radius: 3px;
@@ -795,7 +833,7 @@ input[type="submit"]:not(.btn-round) {
 
 .session_login .form-signin .form-group.form-signin-group .btn+a.btn {
     margin-top: 2px;
-	border: solid 1px;
+    border: solid 1px;
     border-color: var(--ui_color_red) !important;
     margin-bottom: 3px !important;
     border-radius: 3px;
@@ -896,18 +934,11 @@ input[name]:not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.
 }
 
 
-/*
-  *	COLORED ELEMENTS & ALERTS
-  */
+/*   COLORED ELEMENTS & ALERTS   */
 
 #sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
     border-left: 4px solid;
-    border-color: var(--ui_color_red);
-}
-
-#sidebar li:not(.sub-wrapper):not(.menu-container).sub_active {
-    border-left: 4px solid;
-    border-color: var(--ui_color_red);
+    border-color: var(--ui_color_red_muted);
 }
 
 .badge-danger {
@@ -994,16 +1025,14 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
 }
 
 
-/*
-  *	INTERFACE PANELS
-  */
+/*   INTERFACE PANELS   */
 
 .panel {
     margin-bottom: 20px;
     color: var(--ui_color_dark);
     background-color: var(--ui_color_white);
     border: 1px solid !important;
-    border-color: var(--ui_color_dark) !important;;
+    border-color: var(--ui_color_dark) !important;
     border-radius: 5px !important;
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
@@ -1042,8 +1071,13 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
     margin-top: 1px;
 }
 
-.panel, .panel-heading, .panel-group, .panel-group .panel, .well, .modal-content {
-	border-color: var(--ui_color_black) !important;
+.panel,
+.panel-heading,
+.panel-group,
+.panel-group .panel,
+.well,
+.modal-content {
+    border-color: var(--ui_color_black) !important;
     border-radius: 5px !important;
 }
 
@@ -1067,10 +1101,10 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
 }
 
 #extended_sysinfo-1 .panel>.panel-heading>.panel-title>a>.on-hover {
-	color: var(--ui_color_red) !important;
+    color: var(--ui_color_red) !important;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
-    opacity: 0.75 ;
+    opacity: 0.75;
 }
 
 #extended_sysinfo-1 .panel>.panel-heading>.panel-title>a>.on-hover {
@@ -1079,7 +1113,8 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
     display: none;
 }
 
-.sub_table_container.table-hardcoded tr td[width='25%']>a, a.opener_trigger:focus {
+.sub_table_container.table-hardcoded tr td[width="25%"]>a,
+a.opener_trigger:focus {
     color: var(--ui_color_grey) !important;
 }
 
@@ -1155,9 +1190,7 @@ div.dataTables_wrapper div.dataTables_paginate,
 }
 
 
-/*
-  *	PIE CHARTS
-  */
+/*   PIE CHARTS   */
 
 .piechart canvas {
     display: inline-block;
