@@ -30,7 +30,7 @@
     --ui_color_yellow: rgba(225, 220, 35, 1) !important;
     --ui_color_magenta: rgba(225, 100, 210, 1) !important;
     --ui_color_black: rgba(23, 29, 31, 1) !important;
-    --ui_color_dark: rgba(42, 51, 51, 1) !important;
+    --ui_color_dark: #111 !important;
     --ui_color_grey: rgba(215, 225, 220, 1) !important;
     --ui_color_white: rgba(245, 248, 250, 1) !important;
     --ui_color_fade: rgba(245, 248, 250, 0.85) !important;
@@ -54,7 +54,7 @@ html[data-bgs="gainsboro"] .loader-container,
 html[data-bgs="gainsboro"] {
     background-repeat: repeat;
     background-image: radial-gradient(#e0e0e0, #333333), url("https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/img/background.jpg");
-    filter: opacity(0.95);
+    
     background-position: left;
     background-blend-mode: multiply;
     background-attachment: fixed;
@@ -66,7 +66,9 @@ html[data-bgs="gainsboro"] .loader-container,
 html[data-bgs="gainsboro"] {
     background-color: transparent !important;
 }
-
+.panel{
+	filter: opacity(0.85);
+}
 .modal-backdrop.in {
     display: none !important;
 }
@@ -291,20 +293,18 @@ html #sidebar .switch-mins a {
     color: var(--ui_color_green_muted);
 }
 
-.switch-mins label:first-of-type i+span {
+.switch-mins label i+span {
     display: none !important;
     /*   This removes the original Webmin icon from the left sidebar button.   */
 }
 
 i.wbm-webmin::before {
-    content: "\271A" !important;
-    color: var(--ui_color_green_muted);
+    color: var(--ui_color_red);
     /*   This defines the glyph that appears on the left sidebar button. https://css-tricks.com/snippets/html/glyphs/   */
 }
 
-.wbm-virtualmin:before {
-    color: var(--ui_color_red_muted);
-    content: "\f08c";
+i.wbm-virtualmin:before {
+    color: var(--ui_color_red);
     /*   This defines the glyph that appears on the right sidebar button. https://css-tricks.com/snippets/html/glyphs/   */
 }
 
@@ -333,7 +333,7 @@ i.wbm-webmin::before {
 }
 
 #sidebar li:not(.sub-wrapper):not(.menu-container).has-sub.active {
-    background-color: #0b0c0cc4;
+    background-color: rgba(0,0,0,0.1);
     border-bottom: solid 1px var(--ui_color_red_muted);
     filter: drop-shadow(2px -12px 6px black);
 }
@@ -343,12 +343,24 @@ i.wbm-webmin::before {
 }
 
 .switch-mins label:first-of-type::after {
-    color: var(--ui_color_red_muted);
+    color: var(--ui_color_red);
     font-family: var(--ui_font_header);
     font-weight: 700;
     letter-spacing: 4px;
-    content: "NATIVE";
-    /*   This replaces the label text on the left top sidebar button   */
+    content: "SERVER";
+    /*   This replaces the label text on the left top sidebar button  */
+    display: block;
+    visibility: visible !important;
+    margin-top: -4px;
+    -webkit-font-smoothing: antialiased;
+}
+.switch-mins label:nth-of-type(2)::after {
+    color: var(--ui_color_red);
+    font-family: var(--ui_font_header);
+    font-weight: 700;
+    letter-spacing: 4px;
+    content: "USER";
+    /*   This replaces the label text on the left top sidebar button  */
     display: block;
     visibility: visible !important;
     margin-top: -4px;
@@ -565,7 +577,7 @@ form.session_login,
     -webkit-font-feature-settings: antialiased;
     font-feature-settings: antialiased;
     letter-spacing: 2px;
-    content: "imagination + technology";
+    content: "SyncWeb Control Panel";
     /*   This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel   */
     text-transform: uppercase;
     color: var(--ui_color_grey) !important;
@@ -584,7 +596,7 @@ button {
 
 .btn-link:hover,
 .btn-link:focus {
-    color: var(--ui_color_white) !important;
+    color: var(--ui_color_black) !important;
     text-decoration: underline;
     background-color: transparent;
 }
@@ -704,7 +716,7 @@ button.favorites-editor,
 }
 
 .btn.btn-transparent-link {
-    color: var(--ui_color_grey);
+    color: var(--ui_color_dark);
 }
 
 .btn:not(.btn-round),
@@ -1090,7 +1102,7 @@ html:not([data-bgs="nightRider"]) .right-side-tabs-toggler[data-bgs="nav"] {
 }
 
 #content #system-status ._sync_sysinfo_cnt {
-    margin-right: -20px;
+    margin-right: 0px;
     margin-top: -8px;
     margin-left: 0;
     border-color: transparent !important;
@@ -1131,6 +1143,7 @@ a.opener_trigger:focus {
     font-size: 14px;
     text-align: center;
     white-space: nowrap;
+    color: #161c1e;
 }
 
 #headln2c span[data-main_title] {
@@ -1138,6 +1151,9 @@ a.opener_trigger:focus {
     vertical-align: middle;
     font-size: 23px;
     display: inline-block;
+}
+.panel-title>a, .panel-title>small, .panel-title>.small, .panel-title>small>a, .panel-title>.small>a {
+    color: var(--ui_color_red);
 }
 
 .well,
@@ -1169,7 +1185,7 @@ a.opener_trigger:focus {
 }
 
 .file-manager table>thead>tr>th {
-    color: var(--ui_color_white);
+    color: #000;
     letter-spacing: -0.2px;
 }
 
@@ -1222,4 +1238,19 @@ div.dataTables_wrapper div.dataTables_paginate,
     pointer-events: none;
     color: var(--ui_color_dark);
     opacity: 0.5;
+}
+.session_login>.input-group.form-group>input {
+	color: #fff;
+}
+.session_login>.input-group.form-group>input::placeholder {
+	color: #ccc;
+}
+select, body.csf .dataTables_filter input[type="search"], body .dataTables_filter input[type="search"], .csf-container input[type="text"], .csf-container input[type="search"], .csf-container input, .csf-container select, input[id^="CSF"], input[type="button"], input[type="reset"], input[name]:not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.btn):not(.session_login), input[name]:not([type="image"]):not(.sidebar-search):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not(.btn), .csf-container input[type="text"], .csf-container input[type="search"], .chooser_button, .form-control0 {
+    border-color: #999 !important;
+}
+.session_login .awobject {
+	display: block;
+}
+.session_login .lawobject{
+	color: #fff !important;
 }
