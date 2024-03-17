@@ -19,6 +19,7 @@
     --ui_font_button: Barlow, Helvetica, Arial, sans-serif !important;
     --ui_font_mono: Inconsolata, "Courier New", monospaced !important;
     --bg_color_dark-trans: rgba(23, 29, 31, 0.5) !important;
+    --ui_color_white_muted: rgba(255, 255, 255, 0.65) !important;
     --ui_color_red_muted: rgb(126, 62, 70) !important;
     --ui_color_green_muted: rgb(92, 109, 96) !important;
     --ui_color_black: rgba(23, 29, 31, 1) !important;
@@ -34,6 +35,13 @@
     --ui_color_grey: rgba(215, 225, 220, 1) !important;
     --ui_color_white: rgba(245, 248, 250, 1) !important;
     --ui_color_fade: rgba(245, 248, 250, 0.85) !important;
+    --img_dark_octopus: radial-gradient(#e0e0e0, #000000), url(https://images.unsplash.com/photo-1547716752-9a0331effbef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2152&q=80);
+    --img_dark_city: radial-gradient(#fafafa, #dc6040), url(https://images.unsplash.com/photo-1544411047-c491e34a24e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    --img_ocean_sunset: radial-gradient(#e0e0e0, #333333), url(https://images.unsplash.com/photo-1525755314970-da06742b3792?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+	--img_abstract_arch: radial-gradient(#e0e0e0, #333333), url(https://images.unsplash.com/photo-1544069350-2c7f634f29a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2062&q=80);
+    --img_abstract_metal: radial-gradient(#e0e0e0, #333333), url(https://images.unsplash.com/photo-1546373542-831071838118?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1973&q=80);
+    --img_blue_stalagtite: radial-gradient(#e0e0e0, #333333), url(https://images.unsplash.com/photo-1549848078-869074eb2e70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+
 }
 
 
@@ -42,6 +50,9 @@
 ::selection {
     background-color: var(--ui_color_grey);
     color: var(--ui_color_black);
+}
+::placeholder {
+	color: var(--ui_color_white_muted) !important;
 }
 
 
@@ -53,8 +64,8 @@ html[data-bgs="gainsboro"] .container:not(.form-signin-banner) .container:not(.s
 html[data-bgs="gainsboro"] .loader-container,
 html[data-bgs="gainsboro"] {
     background-repeat: repeat;
-    background-image: radial-gradient(#e0e0e0, #333333), url("https://raw.githubusercontent.com/nativeit-dev/webmin-native-theme/master/img/background.jpg");
-    filter: opacity(0.95);
+    background-image: var(--img_dark_city);
+    filter: opacity(1);
     background-position: left;
     background-blend-mode: multiply;
     background-attachment: fixed;
@@ -67,6 +78,9 @@ html[data-bgs="gainsboro"] {
     background-color: transparent !important;
 }
 
+html[data-bgs="gainsboro"] .container-fluid .panel-body .panel-default>.panel-heading {
+	
+}
 .modal-backdrop.in {
     display: none !important;
 }
@@ -153,6 +167,7 @@ form.session_login,
 .font-family-default {
     font-family: var(--ui_font_normal);
     font-size: 100%;
+    color: var(--ui_color_white);
 }
 
 html:not([data-bgs="nightRider"]) .right-side-tabs[data-bgs="nav"] .right-side-tabs-dismiss i,
@@ -181,9 +196,11 @@ html:not([data-bgs="nightRider"]) .right-side-tabs[data-bgs="nav"] .tab-pane .in
 }
 
 html[data-theme="blue"] .form-group .form-control.sidebar-search {
-    color: var(--ui_color_grey);
+    color: var(--ui_color_white);
 }
-
+.form-control {
+	color: var(--ui_color_white);
+}
 
 /*   CUSTOM BRANDING   */
 
@@ -206,7 +223,6 @@ html[data-theme="blue"] .form-group .form-control.sidebar-search {
     display: none;
     /*   This removes the Webmin icon from the login screen   */
 }
-
 
 /*   SIDEBAR   */
 
@@ -373,7 +389,7 @@ i.wbm-webmin::before {
     border-radius: 3px !important;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    display: flex;
+
     align-self: center;
     justify-content: center;
     align-items: center;
@@ -530,6 +546,7 @@ i.wbm-webmin::before {
 body>div>form>div.__logo_welcome._logo_welcome>img {
     filter: opacity(1);
     z-index: 10004;
+    margin-bottom: 1rem;
 }
 
 .__logo_welcome._logo_welcome {
@@ -537,25 +554,25 @@ body>div>form>div.__logo_welcome._logo_welcome>img {
     z-index: 10004;
     display: block;
 }
-
+/*
 .session_login .form-signin-paragraph {
     margin: 0px !important;
 }
-
+*/
 body.error_40x,
 html.session_login,
 body.session_login,
 form.session_login,
 .container.session_login {
-    font-family: var(--ui_font_heading) !important;
+    font-family: var(--ui_font_header) !important;
     background-color: var(--ui_color_white);
 }
 
 .form-signin-paragraph {
-    margin: 0px;
-    top: -62px !important;
-    visibility: hidden !important;
+    top: -60px !important;
+    visibility: collapse !important;
     position: relative;
+    margin-bottom: 0px !important;
 }
 
 .form-signin-paragraph:after {
@@ -568,7 +585,8 @@ form.session_login,
     content: "imagination + technology";
     /*   This adds text below the login logo (the logo itself can be set from the theme's unauthenticated logo option panel   */
     text-transform: uppercase;
-    color: var(--ui_color_grey) !important;
+    color: var(--ui_color_white_muted) !important;
+    top: -20% !important;
     display: block;
     visibility: visible;
 }
@@ -823,7 +841,9 @@ input[type="submit"]:not(.btn-round) {
     margin-bottom: 3px !important;
     border-radius: 3px;
 }
-
+.session_login .form-signin::placeholder {
+    color: var(--ui_color_white);
+}
 .session_login .form-signin .form-group.form-signin-group .btn:first-of-type {
     border: solid 1px;
     border-color: var(--ui_color_green) !important;
@@ -832,6 +852,7 @@ input[type="submit"]:not(.btn-round) {
 }
 
 .session_login .form-signin .form-group.form-signin-group .btn+a.btn {
+	display: none !important;
     margin-top: 2px;
     border: solid 1px;
     border-color: var(--ui_color_red) !important;
