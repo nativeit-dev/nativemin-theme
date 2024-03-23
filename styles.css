@@ -167,7 +167,6 @@ form.session_login,
 .font-family-default {
     font-family: var(--ui_font_normal);
     font-size: 100%;
-    color: var(--ui_color_white);
 }
 
 html:not([data-bgs="nightRider"]) .right-side-tabs[data-bgs="nav"] .right-side-tabs-dismiss i,
